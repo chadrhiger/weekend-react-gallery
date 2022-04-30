@@ -1,7 +1,12 @@
-function GalleryItem({}) {
+function GalleryItem({gallery}) {
 
-  let 
+  // let classToApply;
 
+  return (
+    <li>
+      console.log({gallery.path});
+    </li>
+  )
 }
 
 export default GalleryItem;
