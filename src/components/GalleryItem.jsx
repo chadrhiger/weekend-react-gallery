@@ -25,10 +25,10 @@ function GalleryItem({ galleryItem, updateLikes }) {
 
 
   return (
-    <div key={galleryItem.id} >
-      <li onClick={flipPic}>
+    <div id='container' key={galleryItem.id} >
+      <div onClick={flipPic}>
       {renderFlipPic()}
-      </li>
+      </div>
       <button onClick={handleLikes}>LIKE</button>
       Likes: {galleryItem.likes}
       

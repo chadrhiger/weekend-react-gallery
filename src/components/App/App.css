@@ -1,15 +1,18 @@
 .App {
   text-align: center;
+  background-color: #fb9a40;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #a3f3eb;
   padding: 1em;
-  color: white;
+  text-shadow: 2px 3px black;
+  color: #fbd341;
   margin-bottom: 1em;
 }
 
 .App-title {
+  
   font-size: 1.5em;
 }
 
@@ -18,5 +21,11 @@
   height: 100px;
   margin-left: auto;
   margin-right: auto;
-  /* margin-bottom: 15px; */
+  color: black;
+  background-color: blueviolet;
+}
+
+.container {
+  border: 3px black;
+  grid-auto-columns: auto;
 }

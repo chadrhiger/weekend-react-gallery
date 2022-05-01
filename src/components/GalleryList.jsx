@@ -6,7 +6,7 @@ import GalleryItem from "./GalleryItem";
 function GalleryList({ galleryList, updateLikes }) {
   console.log('galleryList: The Prop:', galleryList);
   return (
-    <ul>
+    <div>
       {galleryList.map((galleryItem) => {
         return (
           <GalleryItem
@@ -15,7 +15,7 @@ function GalleryList({ galleryList, updateLikes }) {
             galleryItem={galleryItem} />
         )
       })}
-    </ul>
+    </div>
   )
 }
 
