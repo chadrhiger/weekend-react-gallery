@@ -1,32 +1,49 @@
-function GalleryItem({gallery}) {
+import { useState, useEffect } from 'react';
 
-  // let classToApply;
+
+function GalleryItem({ galleryItem, updateLikes }) {
+  const [pictureSideUp, updatePictureSideUp]  = useState(true);
+  
+  const flipPic = () => {
+    updatePictureSideUp(!pictureSideUp)
+  }
+
+  const renderFlipPic = () => {
+    if (pictureSideUp) {
+      return <img src={galleryItem.path} width="100" height="100" />
+    } else {
+      return <div className='flipDescription'>{galleryItem.description} </div> 
+
+    }
+  }
+
+
+  const handleLikes = (e) => {
+    e.preventDefault();
+    updateLikes(galleryItem.id);
+  };
+
 
   return (
-    <li>
-      console.log({gallery.path});
-    </li>
+    <div key={galleryItem.id} >
+      <li onClick={flipPic}>
+      {renderFlipPic()}
+      </li>
+      <button onClick={handleLikes}>LIKE</button>
+      Likes: {galleryItem.likes}
+      
+    </ div>
   )
 }
 
 export default GalleryItem;
 
 
-// function CreatureItem({creature}) {
-
-//   let classToApply;
-
-//   if (creature.name === 'Todd') {
-//     classToApply = 'toddBackground'
-//   }
-
-//   return (
-//     <li
-//       className={classToApply}>
-//       {creature.name} is from {creature.origin}
-//     </li>
-//   )
-
+// return (
+//   <div>
+//     {renderToddText()}
+//     <button onClick={flipTodd}>Flip Todd</button>
+//   </div>
+// )
 // }
 
-// export default CreatureItem;
